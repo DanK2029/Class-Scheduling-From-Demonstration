@@ -1,0 +1,93 @@
+[
+	{
+		"name": "CS 8803",
+  		"time": [720,795],
+  		"days":	"TR",
+  		"hours": 3,
+  		"difficulty": 3.04
+	},
+	{
+	  	"name": "CS 8803"		,
+	  	"time": [990,1065]		,
+	  	"days":	"TR"		,
+  		"hours": 3			,
+  		"difficulty": 3.04
+	},
+	{
+	  	"name": "CS 6601"		,
+	  	"time": [570,645]		,
+	  	"days":	"TR"		,
+  		"hours": 3			,
+  		"difficulty": 3.35
+	},
+	{
+	  	"name": "CSE 6010"		,
+	  	"time": [675,725]		,
+	  	"days":	"MWF"		,
+  		"hours": 3			,
+  		"difficulty": 3.57
+	},
+	{
+	  	"name": "ME 2110"		,
+	  	"time": [900,950]		,
+	  	"days":	"MW"		,
+  		"hours": 4			,
+  		"difficulty": 3.46
+	},
+	{
+	  	"name": "BIOL 1520"		,
+	  	"time": [545,595]		,
+	  	"days":	"MWF"		,
+  		"hours": 4			,
+  		"difficulty": 3.16
+	},
+	{
+	  	"name": "CS 4290"		,
+	  	"time": [900,975]		,
+	  	"days":	"TR"		,
+  		"hours": 3			,
+  		"difficulty": 3.12
+	},
+	{
+	  	"name": "CS 4690"		,
+	  	"time": [810,885]		,
+	  	"days":	"TR"		,
+  		"hours": 3			,
+  		"difficulty": 3.40
+	},
+	{
+	  	"name": "CS 4646"		,
+	  	"time": [810,885]		,
+	  	"days":	"TR"		,
+  		"hours": 3			,
+  		"difficulty":	3.31
+	},
+	{
+	  	"name": "CS 6290"		,
+	  	"time": [900,975]		,
+	  	"days":	"TR"		,
+  		"hours": 3			,
+  		"difficulty":3.07
+	},
+	{
+	  	"name": "CS 6263"		,
+	  	"time":  [900,975]		,
+	  	"days":	 "MW"		,
+  		"hours": 3			,
+  		"difficulty": 3.61
+	},
+	{
+	  	"name": "CS 4220"		,
+	  	"time": [540,645]		,
+	  	"days":	"TR"		,
+  		"hours": 3			,
+  		"difficulty": 3.5
+	},
+	{
+	  	"name": "CS 1301"	,
+	  	"time": [900,975],
+	  	"days":	"R"	,
+  		"hours": 3,
+  		"difficulty":	3.27
+	}
+]
