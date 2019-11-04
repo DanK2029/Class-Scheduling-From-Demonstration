@@ -1,4 +1,6 @@
+from consts import *
 import numpy as np
+import json
 from itertools import product
 import ConvertClassesToTimeline as ct
 
@@ -44,5 +46,24 @@ def testcode():
     print(classesList)
 
 
-if __name__ == "__main__":
-    testcode()
+def main():
+    with open('classes.json', 'r') as class_data_file:
+        classes_json = json.load(class_data_file)
+
+        class_timeline = convertToTimeline(classes_json)
+        all_schedules = get_schedules(class_timeline)
+
+        all_schedules_ex_empty_class = []
+
+        for s in all_schedules:
+            schedules_ex_empty_class = remove_empty_classes(s)
+            if schedules_ex_empty_class:
+                all_schedules_ex_empty_class.append(schedules_ex_empty_class)
+
+        soft_sorted_schedules = sorted(all_schedules_ex_empty_class, key=grade_soft_constraints)
+
+        print(soft_sorted_schedules)
+
+
+if __name__ == '__main__':
+    main()
