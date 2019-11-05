@@ -89,5 +89,61 @@
 	  	"days":	"R",
   		"hours": 3,
   		"difficulty": 3.27
+	},
+	{
+	  	"name": "AE 4803",
+	  	"time": [720,795],
+	  	"days":	"TR",
+  		"hours": 3,
+  		"difficulty": 2.9
+	},
+	{
+	  	"name": "ARCH 8855",
+	  	"time": [805,925],
+	  	"days":	"MWF",
+  		"hours": 5,
+  		"difficulty": 3.1
+	},
+	{
+		"name": "ACCT 2102",
+		"time": [570,645],
+		"days": "TR",
+		"hours": 3,
+		"difficulty": 3.5
+	},
+	{
+	  	"name": "ARBC 3501",
+	  	"time": [720,795],
+	  	"days":	"TR",
+  		"hours": 3,
+  		"difficulty": 3.3
+	},
+	{
+	  	"name": "GRMN 3026",
+	  	"time": [620,790],
+	  	"days":	"WMF",
+  		"hours": 3,
+  		"difficulty": 3.0
+	},
+	{
+	  	"name": "CP 6105",
+	  	"time": [900,975],
+	  	"days":	"MW",
+  		"hours": 3,
+  		"difficulty": 3.8
+	},
+	{
+	  	"name": "ISYE 3044",
+	  	"time": [600, 795],
+	  	"days":	"TR",
+  		"hours": 3,
+  		"difficulty": 3.8
+	},
+	{
+	  	"name": "CHEM 4511",
+	  	"time": [570,645],
+	  	"days":	"TR",
+  		"hours": 3,
+  		"difficulty": 3.0
 	}
 ]

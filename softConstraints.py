@@ -8,16 +8,20 @@ def startTimeSoftConstraint(start_time, schedule):
     for c in schedule:
         schedule_start_time = min(c[TIME][0], schedule_start_time)
 
-    return (start_time - schedule_start_time)**2
+    time_error = start_time - schedule_start_time
+
+    return (time_error/1440)**2
 
 
 def endTimeSoftConstraint(end_time, schedule):
-    schedule_start_time = float("inf")
+    schedule_start_time = -float("inf")
 
     for c in schedule:
         schedule_start_time = max(c[TIME][1], schedule_start_time)
 
-    return (end_time - schedule_start_time)**2
+    time_error = end_time - schedule_start_time
+
+    return (time_error/1440)**2
 
 
 def creditHoursSoftConstraint(total_hours, schedule):
@@ -26,7 +30,9 @@ def creditHoursSoftConstraint(total_hours, schedule):
     for c in schedule:
         schedule_total_hours += c[HOURS]
 
-    return (total_hours - schedule_total_hours)**2
+    credit_error = total_hours - schedule_total_hours
+
+    return (credit_error/21)**2
 
 
 def difficultySoftConstraint(difficulty, schedule):
@@ -40,7 +46,9 @@ def difficultySoftConstraint(difficulty, schedule):
     else:
         avg_difficulty /= len(schedule)
 
-    return (avg_difficulty - difficulty)**2
+    dif_error = avg_difficulty - difficulty
+
+    return (dif_error/4.0)**2
 
 
 def grade_soft_constraints(schedule):
@@ -52,4 +60,6 @@ def grade_soft_constraints(schedule):
         credit_hours_metric = creditHoursSoftConstraint(pref_json[TOTAL_HOURS], schedule)
         difficulty_metric = difficultySoftConstraint(pref_json[DIFFICULTY], schedule)
 
-        return start_time_metric + end_time_metric + credit_hours_metric + difficulty_metric
+        error_sum = start_time_metric + end_time_metric + credit_hours_metric + difficulty_metric
+
+        return error_sum
