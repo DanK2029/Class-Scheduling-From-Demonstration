@@ -5,6 +5,7 @@ from itertools import product
 from timeline import *
 from softConstraints import *
 from hardConstraints import *
+from scheduleGui import *
 import random
 import pandas as pd
 import numpy as np
@@ -50,7 +51,6 @@ def main():
     with open('classes.json', 'r') as class_data_file:
         classes_json = json.load(class_data_file)
 
-    while len(classes_json) > 0:
         class_timeline = convertToTimeline(classes_json)
         all_schedules = get_schedules(class_timeline)
 
@@ -67,23 +67,15 @@ def main():
         hard_constraints_schedules = apply_hard_constraints(all_schedules_ex_empty_class)
 
         soft_sorted_schedules = sorted(hard_constraints_schedules, key=grade_soft_constraints)
+        bestSchedules = soft_sorted_schedules[0:10]
 
-        print(len(classes_json), grade_soft_constraints(soft_sorted_schedules[0]))
+        scheduleGrades = []
+        for i in range(len(bestSchedules)-1):
+            scheduleGui = ScheduleGUI(bestSchedules[i], i)
+            scheduleGrades.append(scheduleGui.grade.get())
 
-        classesJsonList.append(len(classes_json))
-        constraintsList.append(grade_soft_constraints(soft_sorted_schedules[0]))
+        print(scheduleGrades)
 
-        classes_json.remove(random.choice(classes_json))
-
-    classesJsonList = np.array(classesJsonList)
-    constraintsList = np.array(constraintsList)
-
-    df = pd.DataFrame({'Len Classes': classesJsonList, "Soft Constraints": constraintsList},
-                      columns={'Len Classes', 'Soft Constraints'})
-    print(df)
-
-    plt.bar(df["Len Classes"], df["Soft Constraints"])
-    plt.show()
 
 
 if __name__ == '__main__':
