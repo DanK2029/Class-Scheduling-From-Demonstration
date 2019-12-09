@@ -85,20 +85,23 @@ def main():
         regressor = LinearRegression()
         regressor.fit(X, Y)
 
-        newUserScore = regressor.predict([getScheduleVec(soft_sorted_schedules[12])])
-
-        schedule_scores = [(getScheduleVec(schedule), regressor.predict([getScheduleVec(schedule)])) for schedule in soft_sorted_schedules]
+        schedule_scores = [(schedule, regressor.predict([getScheduleVec(schedule)])) for schedule in soft_sorted_schedules]
 
         best_schedule_score = []
 
         for schedule_scores_tup in schedule_scores:
-            if schedule_scores_tup[1] <= 100 and schedule_scores_tup[1] >= 0:
+            if 100 >= schedule_scores_tup[1] >= 0:
                 best_schedule_score.append([schedule_scores_tup[0], schedule_scores_tup[1]])
 
         best_schedule_score.sort(key=lambda x: x[1])
         best_schedule_score = best_schedule_score[-1]
 
-        print("best schedule and score: ", best_schedule_score)
+        bestSchedule = best_schedule_score[0]
+        bestScheduleGUI = ScheduleGUI(bestSchedule, 0)
+        bestScheduleUserScore = bestScheduleGUI.grade.get()
+
+        print("Best Schedule Predicted Score: " + str(best_schedule_score[1]))
+        print("Best Schedule User Score: " + str(bestScheduleUserScore))
 
 
 if __name__ == '__main__':
